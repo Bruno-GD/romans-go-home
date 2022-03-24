@@ -14,11 +14,24 @@ public class RomansGoHome {
     public String getNumeroRomano() {
         return numeroRomano;
     }
+
     public Integer getNumeroDecimal() {
         return numeroDecimal;
     }
+
     private void setNumeroDecimal(int numeroDecimal) {
         this.numeroDecimal = numeroDecimal;
+    }
+
+    private Matcher getMatcher(RomanNumber rn) {
+        Pattern p = rn.getRegEx();
+        return p.matcher(getNumeroRomano());
+    }
+
+    private void setNextDecimal(Matcher m, RomanNumber rn) {
+        int nextDecimal = getNumeroDecimal() +
+                rn.getValue() * ((m.end() - m.start()) / rn.name().length());
+        setNumeroDecimal(nextDecimal);
     }
 
     public int toDecimal() {
@@ -30,13 +43,10 @@ public class RomansGoHome {
         int lastIndex = 0;
         for (int i = RomanNumber.values().length-1; i >= 0; i--) {
             RomanNumber rn = RomanNumber.values()[i];
-            Pattern p = rn.getRegEx();
-            Matcher m = p.matcher(getNumeroRomano());
+            Matcher m = getMatcher(rn);
 
             if (m.find(lastIndex)) {
-                int nuevoValor = getNumeroDecimal() +
-                        (rn.getValue() * ((m.end() - m.start()) / rn.name().length()));
-                setNumeroDecimal(nuevoValor);
+                setNextDecimal(m, rn);
                 lastIndex = m.end();
             }
 
