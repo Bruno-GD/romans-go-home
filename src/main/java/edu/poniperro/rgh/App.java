@@ -5,33 +5,31 @@ import edu.poniperro.rgh.Roman.RomansGoHome;
 public class App {
 
     public static void main(String[] args) {
-
-        RomansGoHome arabizador = new RomansGoHome();
         /*
         TESTEAR UNA SOLA LETRA
          */
 
         System.out.println("-- NUMEROS SIMPLES --");
 
-        arabizador.setNumeroRomano("I");
+        RomansGoHome arabizador = new RomansGoHome("I");
         System.out.printf("%s = %d\n", arabizador.getNumeroRomano(), arabizador.toDecimal());
 
-        arabizador.setNumeroRomano("V");
+        arabizador = new RomansGoHome("V");
         System.out.printf("%s = %d\n", arabizador.getNumeroRomano(), arabizador.toDecimal());
 
-        arabizador.setNumeroRomano("X");
+        arabizador = new RomansGoHome("X");
         System.out.printf("%s = %d\n", arabizador.getNumeroRomano(), arabizador.toDecimal());
 
-        arabizador.setNumeroRomano("L");
+        arabizador = new RomansGoHome("L");
         System.out.printf("%s = %d\n", arabizador.getNumeroRomano(), arabizador.toDecimal());
 
-        arabizador.setNumeroRomano("C");
+        arabizador = new RomansGoHome("C");
         System.out.printf("%s = %d\n", arabizador.getNumeroRomano(), arabizador.toDecimal());
 
-        arabizador.setNumeroRomano("D");
+        arabizador = new RomansGoHome("D");
         System.out.printf("%s = %d\n", arabizador.getNumeroRomano(), arabizador.toDecimal());
 
-        arabizador.setNumeroRomano("M");
+        arabizador = new RomansGoHome("M");
         System.out.printf("%s = %d\n", arabizador.getNumeroRomano(), arabizador.toDecimal());
 
         /*
@@ -40,13 +38,13 @@ public class App {
 
         System.out.println("-- NUMEROS COMBINADOS --");
 
-        arabizador.setNumeroRomano("II");
+        arabizador = new RomansGoHome("II");
         System.out.printf("%s = %d\n", arabizador.getNumeroRomano(), arabizador.toDecimal());
 
-        arabizador.setNumeroRomano("III");
+        arabizador = new RomansGoHome("III");
         System.out.printf("%s = %d\n", arabizador.getNumeroRomano(), arabizador.toDecimal());
 
-        arabizador.setNumeroRomano("XVI");
+        arabizador = new RomansGoHome("XVI");
         System.out.printf("%s = %d\n", arabizador.getNumeroRomano(), arabizador.toDecimal());
 
         /*
@@ -55,13 +53,13 @@ public class App {
 
         System.out.println("-- RESTAR NUMEROS COMBINADOS --");
 
-        arabizador.setNumeroRomano("IV");
+        arabizador = new RomansGoHome("IV");
         System.out.printf("%s = %d\n", arabizador.getNumeroRomano(), arabizador.toDecimal());
 
-        arabizador.setNumeroRomano("XIV");
+        arabizador = new RomansGoHome("XIV");
         System.out.printf("%s = %d\n", arabizador.getNumeroRomano(), arabizador.toDecimal());
 
-        arabizador.setNumeroRomano("MCXXIV");
+        arabizador = new RomansGoHome("MCXXIV");
         System.out.printf("%s = %d\n", arabizador.getNumeroRomano(), arabizador.toDecimal());
     }
 }
